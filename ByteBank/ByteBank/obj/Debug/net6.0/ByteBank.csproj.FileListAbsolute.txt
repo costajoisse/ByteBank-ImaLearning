@@ -1,0 +1,15 @@
+C:\DEV\IMÃ LEARNING\PROJETOS\ByteBank\ByteBank\ByteBank\bin\Debug\net6.0\ByteBank.exe
+C:\DEV\IMÃ LEARNING\PROJETOS\ByteBank\ByteBank\ByteBank\bin\Debug\net6.0\ByteBank.deps.json
+C:\DEV\IMÃ LEARNING\PROJETOS\ByteBank\ByteBank\ByteBank\bin\Debug\net6.0\ByteBank.runtimeconfig.json
+C:\DEV\IMÃ LEARNING\PROJETOS\ByteBank\ByteBank\ByteBank\bin\Debug\net6.0\ByteBank.dll
+C:\DEV\IMÃ LEARNING\PROJETOS\ByteBank\ByteBank\ByteBank\bin\Debug\net6.0\ByteBank.pdb
+C:\DEV\IMÃ LEARNING\PROJETOS\ByteBank\ByteBank\ByteBank\obj\Debug\net6.0\ByteBank.csproj.AssemblyReference.cache
+C:\DEV\IMÃ LEARNING\PROJETOS\ByteBank\ByteBank\ByteBank\obj\Debug\net6.0\ByteBank.GeneratedMSBuildEditorConfig.editorconfig
+C:\DEV\IMÃ LEARNING\PROJETOS\ByteBank\ByteBank\ByteBank\obj\Debug\net6.0\ByteBank.AssemblyInfoInputs.cache
+C:\DEV\IMÃ LEARNING\PROJETOS\ByteBank\ByteBank\ByteBank\obj\Debug\net6.0\ByteBank.AssemblyInfo.cs
+C:\DEV\IMÃ LEARNING\PROJETOS\ByteBank\ByteBank\ByteBank\obj\Debug\net6.0\ByteBank.csproj.CoreCompileInputs.cache
+C:\DEV\IMÃ LEARNING\PROJETOS\ByteBank\ByteBank\ByteBank\obj\Debug\net6.0\ByteBank.dll
+C:\DEV\IMÃ LEARNING\PROJETOS\ByteBank\ByteBank\ByteBank\obj\Debug\net6.0\refint\ByteBank.dll
+C:\DEV\IMÃ LEARNING\PROJETOS\ByteBank\ByteBank\ByteBank\obj\Debug\net6.0\ByteBank.pdb
+C:\DEV\IMÃ LEARNING\PROJETOS\ByteBank\ByteBank\ByteBank\obj\Debug\net6.0\ByteBank.genruntimeconfig.cache
+C:\DEV\IMÃ LEARNING\PROJETOS\ByteBank\ByteBank\ByteBank\obj\Debug\net6.0\ref\ByteBank.dll

@@ -28,7 +28,7 @@ namespace ByteBank
 
         static void RegistrarNovoUsuario(List<string> cpfs, List<string> titulares, List<string> senhas, List<double> saldos)
         {
-            Console.Write("Digite o cpf: ");
+            Console.Write("Digite o CPF: ");
             cpfs.Add(Console.ReadLine());
             Console.Write("Digite o nome: ");
             titulares.Add(Console.ReadLine());
@@ -72,6 +72,8 @@ namespace ByteBank
             string cpfParaApresentar = Console.ReadLine();
             int indexParaApresentar = cpfs.FindIndex(cpf => cpf == cpfParaApresentar);
 
+
+
             if (indexParaApresentar == -1)
             {
                 Console.WriteLine("Não foi possível apresentar esta Conta");
@@ -85,6 +87,7 @@ namespace ByteBank
         {
             Console.WriteLine($"Total acumulado no banco: {saldos.Sum():F2}");
             saldos.Sum();
+
         }
 
         static void ApresentaConta(int index, List<string> cpfs, List<string> titulares, List<double> saldos)
@@ -95,30 +98,65 @@ namespace ByteBank
 
         static void Depositos(List<string> cpfs, List<double> saldos)
         {
+         
             string cpfParaDeposito = Console.ReadLine();
             int indexParaDeposito = cpfs.FindIndex(cpf => cpf == cpfParaDeposito);
-            Console.Write("Digite o valor para deposito: ");
+
+
+            Console.WriteLine("Digite o valor para deposito: ");
             int valorDeposito = int.Parse(Console.ReadLine());
-            Console.Write($"Confirma o valor de R$ {valorDeposito} para deposito?");
-            Console.Write("SIM ou NÃO");
+            Console.WriteLine($"Confirma o valor de R$ {valorDeposito} para deposito?");
+            Console.Write("SIM ou NÃO: ");
             string confirma = Console.ReadLine();
 
             if (confirma == "SIM")
             {
-                int saldoCliente = 0;
-                saldoCliente += valorDeposito;
+                int saldo = 0;
+    saldo += valorDeposito;
+
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"Deposito efetuado com sucesso.");
+                Console.ResetColor();
             }
-    
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Favor, refaça operação.");
+                Console.ResetColor();
+            }
+
 
         }
         static void transferir(List<string> cpfs, List<double> saldos)
         {
+
             string cpfParaDeposito = Console.ReadLine();
             int indexParaDeposito = cpfs.FindIndex(cpf => cpf == cpfParaDeposito);
-            Console.Write("Digite CPF do usuário que deseja transferir: ");
-            double valor = double.Parse(Console.ReadLine());
-        }
 
+
+            Console.WriteLine("Digite o valor que deseja transferir: ");
+            int valorTransferido = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Confirma o valor de R$ {valorTransferido} para transferencia?");
+            Console.Write("SIM ou NÃO: ");
+            string confirma = Console.ReadLine();
+
+            if (confirma == "SIM")
+            {
+                int saldo = 0;
+                saldo += valorTransferido;
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"Transferencia efetuada com sucesso.");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Favor, refaça operação.");
+                Console.ResetColor();
+            }
+
+
+        }
         static void ManipularConta(List<double> saldos, List<string> cpfs)
         {
 
@@ -130,8 +168,8 @@ namespace ByteBank
             if (indexParaAchar == -1)
             {
 
-                Console.BackgroundColor = ConsoleColor.Red;
-                Console.ForegroundColor = ConsoleColor.White;
+
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Não foi possível apresentar esta Conta");
                 Console.WriteLine("MOTIVO: Conta não encontrada.");
                 Console.ResetColor();
@@ -142,8 +180,9 @@ namespace ByteBank
 
                 Console.WriteLine("Insira como gostaria de ser chamado(a): ");
                 string nomeUsuario = Console.ReadLine();
-                Console.WriteLine($"Olá,{nomeUsuario}! Bem-Vindo! ");
-
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"Olá,{nomeUsuario}! Bem-Vindo(a)! ");
+                Console.ResetColor();
 
                 int optionSec;
                 ShowMenuSec();
@@ -162,7 +201,6 @@ namespace ByteBank
                             break;
                         case 1:
                             Depositos(cpfs, saldos);
-
                             break;
                         case 2:
                             transferir(cpfs, saldos);
@@ -174,67 +212,69 @@ namespace ByteBank
                 }
                 while (optionSec != 0);
             }
-        static void Main(string[] args)
+
+        }
+        static void Main()
+        {
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("________________________________OLÁ, BEM VINDO!________________________________");
+            Console.ResetColor();
+
+            Console.WriteLine("Antes de começar a usar, vamos configurar alguns valores: ");
+
+            List<string> cpfs = new List<string>();
+            List<string> titulares = new List<string>();
+            List<string> senhas = new List<string>();
+            List<double> saldos = new List<double>();
+
+            int option;
+
+            do
             {
-                Console.BackgroundColor = ConsoleColor.Gray;
-                Console.ForegroundColor = ConsoleColor.Black;
-                Console.WriteLine("________________________________OLÁ, BEM VINDO!________________________________");
+                ShowMenu();
+                option = int.Parse(Console.ReadLine());
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("_______________________________________________________________________________");
                 Console.ResetColor();
 
-                Console.WriteLine("Antes de começar a usar, vamos configurar alguns valores: ");
-
-                List<string> cpfs = new List<string>();
-                List<string> titulares = new List<string>();
-                List<string> senhas = new List<string>();
-                List<double> saldos = new List<double>();
-
-                int option;
-
-                do
+                switch (option)
                 {
-                    ShowMenu();
-                    option = int.Parse(Console.ReadLine());
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("_______________________________________________________________________________");
-                    Console.ResetColor();
+                    case 0:
+                        Console.WriteLine("Estou encerrando o programa...");
+                        break;
+                    case 1:
+                        RegistrarNovoUsuario(cpfs, titulares, senhas, saldos);
+                        break;
+                    case 2:
+                        DeletarUsuario(cpfs, titulares, senhas, saldos);
+                        break;
+                    case 3:
+                        ListarTodasAsContas(cpfs, titulares, saldos);
+                        break;
+                    case 4:
+                        ApresentarUsuario(cpfs, titulares, saldos);
+                        break;
+                    case 5:
+                        ApresentarValorAcumulado(saldos);
+                        break;
+                    case 6:
+                        ManipularConta(saldos, cpfs);
+                        break;
 
-                    switch (option)
-                    {
-                        case 0:
-                            Console.WriteLine("Estou encerrando o programa...");
-                            break;
-                        case 1:
-                            RegistrarNovoUsuario(cpfs, titulares, senhas, saldos);
-                            break;
-                        case 2:
-                            DeletarUsuario(cpfs, titulares, senhas, saldos);
-                            break;
-                        case 3:
-                            ListarTodasAsContas(cpfs, titulares, saldos);
-                            break;
-                        case 4:
-                            ApresentarUsuario(cpfs, titulares, saldos);
-                            break;
-                        case 5:
-                            ApresentarValorAcumulado(saldos);
-                            break;
-                        case 6:
-                            ManipularConta(saldos, cpfs);
-                            break;
+                }
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("_______________________________________________________________________________");
+                Console.ResetColor();
 
-                    }
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("_______________________________________________________________________________");
-                    Console.ResetColor();
-
-                } while (option != 0);
+            } while (option != 0);
 
 
-
-            }
 
         }
     }
 }
+
+
 
 

@@ -15,7 +15,10 @@ namespace ByteBank
             Console.WriteLine("5 - Quantia armazenada no banco");
             Console.WriteLine("6 - Manipular a conta");
             Console.WriteLine("0 - Para sair do programa");
+            Console.BackgroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.Write("Digite a opção desejada: ");
+            Console.ResetColor();
         }
         public static void ShowMenuSec()
         {
